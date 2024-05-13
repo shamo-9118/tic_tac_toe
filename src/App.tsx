@@ -17,11 +17,21 @@ function Square({
 }
 
 export default function Board() {
+  const [xIsNext, setIsNext] = useState<boolean>(true);
   const [square, setSquare] = useState<string[]>(Array(9).fill(''));
 
   function handleClick(squareIndex: number) {
     const nextSquares = [...square];
-    nextSquares[squareIndex] = 'x';
+
+    if (xIsNext) {
+      nextSquares[squareIndex] = 'x';
+    }
+
+    if (!xIsNext) {
+      nextSquares[squareIndex] = '⚪︎';
+    }
+
+    setIsNext(!xIsNext);
     setSquare(nextSquares);
   }
 
