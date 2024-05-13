@@ -23,6 +23,8 @@ export default function Board() {
   function handleClick(squareIndex: number) {
     const nextSquares = [...square];
 
+    if (nextSquares[squareIndex] === '⚪︎' || nextSquares[squareIndex] === 'x')
+      return;
     if (xIsNext) {
       nextSquares[squareIndex] = 'x';
     }
