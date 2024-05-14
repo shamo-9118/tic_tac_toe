@@ -23,9 +23,6 @@ type Props = {
 };
 
 function Board({ xIsNext, squares, onPlay }: Props) {
-  // const [nIsNext, setIsNext] = useState<boolean>(true);
-  // const [square, setSquare] = useState<string[]>(Array(9).fill(''));
-
   const winner = calculateWinner(squares);
   let status = '';
   if (winner) {
@@ -52,8 +49,6 @@ function Board({ xIsNext, squares, onPlay }: Props) {
     }
 
     onPlay(nextSquares);
-    // setIsNext(!xIsNext);
-    // setSquare(nextSquares);
   }
 
   return (
